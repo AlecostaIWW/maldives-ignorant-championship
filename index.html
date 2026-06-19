@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -177,14 +177,14 @@
   .pos-badge.gold { color: var(--yellow); }
   .status-badge { font-size: 11px; letter-spacing: 1px; padding: 3px 8px; text-transform: uppercase; }
   .status-badge.speedo { background: var(--yellow); color: var(--black); font-weight: 700; }
-  .status-badge.schiavo { background: var(--red); color: var(--white); font-weight: 700; }
+  .status-badge.slave  { background: var(--red); color: var(--white); font-weight: 700; }
 
-  .schiavo-box {
+  .slave-box {
     background: rgba(214,60,47,0.08);
     border: 1px solid var(--red);
     padding: 20px 24px;
   }
-  .schiavo-box h3 {
+  .slave-box h3 {
     font-family: 'Black Han Sans', sans-serif;
     font-size: 16px;
     letter-spacing: 2px;
@@ -192,14 +192,14 @@
     color: var(--red);
     margin-bottom: 12px;
   }
-  .schiavo-box ul { list-style: none; display: grid; gap: 6px; }
-  .schiavo-box ul li {
+  .slave-box ul { list-style: none; display: grid; gap: 6px; }
+  .slave-box ul li {
     font-size: 13px;
     color: #bbb;
     padding-left: 16px;
     position: relative;
   }
-  .schiavo-box ul li::before { content: '→'; position: absolute; left: 0; color: var(--red); }
+  .slave-box ul li::before { content: '→'; position: absolute; left: 0; color: var(--red); }
 
   .rules-list { list-style: none; display: grid; gap: 8px; }
   .rules-list li {
@@ -233,6 +233,36 @@
     margin-bottom: 6px;
   }
   .prize-card p { font-size: 13px; color: #aaa; line-height: 1.5; }
+
+  .eot-box {
+    background: #111;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--yellow);
+    padding: 20px 24px;
+    margin-top: 16px;
+  }
+  .eot-box h3 {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 12px;
+  }
+  .eot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 8px;
+  }
+  .eot-item {
+    font-size: 12px;
+    color: #aaa;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    background: #1a1a1a;
+    border: 1px solid var(--border);
+  }
 
   .footer {
     text-align: center;
@@ -287,68 +317,60 @@
     <h2>The Concept</h2>
   </div>
   <div class="concept-box">
-    Un campionato informale su 10 giorni in barca. Niente giudici professionali, niente punteggi tecnici. Solo sfide, vergogna pubblica e gloria immeritata.<br><br>
-    Le sfide non hanno un orario fisso — si attivano quando capitano le condizioni, quando qualcuno le lancia, o quando la crew decide che è il momento. Alcune sono permanenti per tutto il trip.<br><br>
-    <strong style="color:var(--yellow)">Leader del giorno</strong> → speedo giallo obbligatorio il giorno dopo in acqua.<br>
-    <strong style="color:var(--red)">Ultimo in classifica</strong> → Schiavo di Bordo per le 24 ore successive.
+    An informal 10-day boat championship. No professional judges, no technical scoring. Just challenges, public humiliation, and undeserved glory.<br><br>
+    Challenges have no fixed schedule — they activate when conditions allow, when someone calls one, or when the crew decides it's time. Some are active for the entire trip.<br><br>
+    <strong style="color:var(--yellow)">Daily Leader</strong> → must wear yellow speedo and yellow lycra for one session of their choice the following day.<br>
+    <strong style="color:var(--red)">Last Place</strong> → becomes Ship's Slave for the following 24 hours.
   </div>
 </section>
 
-<!-- SISTEMA PUNTI -->
+<!-- SCORING -->
 <section>
   <div class="section-header">
     <span class="section-icon">📊</span>
-    <h2>Sistema Punti</h2>
+    <h2>Scoring</h2>
   </div>
   <table class="points-table" style="margin-bottom:16px">
     <thead>
-      <tr><th>Tipo sfida</th><th>Punti</th></tr>
+      <tr><th>Challenge Type</th><th>Points</th></tr>
     </thead>
     <tbody>
-      <tr><td>Sfida surf permanente (daily vote)</td><td><span class="pts-badge">1–2 pt</span></td></tr>
-      <tr><td>Sfide a chiamata — 1° classificato</td><td><span class="pts-badge">5 pt</span></td></tr>
-      <tr><td>Sfide a chiamata — 2° classificato</td><td><span class="pts-badge">3 pt</span></td></tr>
-      <tr><td>Sfide a chiamata — 3° classificato</td><td><span class="pts-badge">2 pt</span></td></tr>
-      <tr><td>Penalità</td><td><span class="pts-badge" style="background:var(--red);color:var(--white)">-1 pt</span></td></tr>
-      <tr><td>MVP Entertainment (voto serale)</td><td><span class="pts-badge">2 pt</span></td></tr>
+      <tr><td>Permanent surf challenge (daily vote)</td><td><span class="pts-badge">1–2 pt</span></td></tr>
+      <tr><td>Attempt challenge — 1st place</td><td><span class="pts-badge">5 pt</span></td></tr>
+      <tr><td>Attempt challenge — 2nd place</td><td><span class="pts-badge">3 pt</span></td></tr>
+      <tr><td>Attempt challenge — 3rd place</td><td><span class="pts-badge">2 pt</span></td></tr>
+      <tr><td>Penalties</td><td><span class="pts-badge" style="background:var(--red);color:var(--white)">−1 pt</span></td></tr>
+      <tr><td>MVP Entertainment (evening vote)</td><td><span class="pts-badge">2 pt</span></td></tr>
     </tbody>
   </table>
   <div class="concept-box" style="font-size:13px">
-    <strong style="color:var(--yellow)">Ponderazione per livello:</strong> tutte le sfide surf vengono giudicate in relazione al livello del surfista. Il kook che prende mezzo tubo spaventato vale quanto il pro che ne infila uno pulito. Il criterio è lo sforzo relativo e il coraggio, non il risultato assoluto.
+    <strong style="color:var(--yellow)">Level weighting:</strong> all surf challenges are judged relative to each surfer's level. The kook who gets half a barrel counts as much as the pro threading a clean one. Criterion is relative effort and commitment, not absolute result.
   </div>
 </section>
 
-<!-- SFIDE SURF PERMANENTI -->
+<!-- PERMANENT SURF CHALLENGES -->
 <section>
   <div class="section-header">
     <span class="section-icon">🏄</span>
-    <h2>Sfide Surf — Permanenti</h2>
+    <h2>Permanent Surf Challenges</h2>
   </div>
   <div class="concept-box" style="font-size:13px;margin-bottom:16px">
-    Attive ogni giorno per tutto il trip. Votate collettivamente a fine sessione. Niente autovoti.
+    Active every day for the entire trip. Voted collectively at the end of each session. No self-votes.
   </div>
   <div class="challenge-grid">
 
     <div class="challenge-card permanent">
       <div>
         <div class="challenge-name">First Barrel <span class="tag yellow">ONE TIME ONLY</span></div>
-        <div class="challenge-desc">Primo tunnel del trip. Anche mezzo, anche brutto, anche se esci dalla back. Chi lo prende per primo prende i punti e il diritto di raccontarlo per i prossimi 10 giorni.</div>
+        <div class="challenge-desc">First tube of the trip. Half a barrel counts. Ugly exit counts. Whoever gets it first keeps the points — and the right to talk about it for the remaining 10 days.</div>
       </div>
       <div class="challenge-points">4<small>pt</small></div>
     </div>
 
     <div class="challenge-card permanent">
       <div>
-        <div class="challenge-name">Best Wipeout of the Day <span class="tag yellow">DAILY</span></div>
-        <div class="challenge-desc">Non vince chi cade di più — vince chi cade meglio. Stile, impatto, conseguenze. Il reef conta doppio.</div>
-      </div>
-      <div class="challenge-points">2<small>pt</small></div>
-    </div>
-
-    <div class="challenge-card permanent">
-      <div>
         <div class="challenge-name">Best Wave of the Day <span class="tag yellow">DAILY</span></div>
-        <div class="challenge-desc">Una manovra pulita, una linea decente, un tubo o vision. Giudicato in relazione al livello del surfista. Niente autovoti.</div>
+        <div class="challenge-desc">A clean maneuver, a decent line, a tube, or pure vision. Judged relative to the surfer's level. No self-votes.</div>
       </div>
       <div class="challenge-points">2<small>pt</small></div>
     </div>
@@ -356,7 +378,15 @@
     <div class="challenge-card permanent">
       <div>
         <div class="challenge-name">Best Commitment <span class="tag yellow">DAILY</span></div>
-        <div class="challenge-desc">Big drop, brave pull-in. Il momento di coraggio più netto della giornata. Giudicato dalla line-up.</div>
+        <div class="challenge-desc">Biggest drop or most committed pull-in of the day. Crew judges.</div>
+      </div>
+      <div class="challenge-points">2<small>pt</small></div>
+    </div>
+
+    <div class="challenge-card permanent">
+      <div>
+        <div class="challenge-name">Best Wipeout of the Day <span class="tag yellow">DAILY</span></div>
+        <div class="challenge-desc">Not who falls the most — who falls best. Style, impact, consequences. Reef contact scores double.</div>
       </div>
       <div class="challenge-points">2<small>pt</small></div>
     </div>
@@ -364,7 +394,7 @@
     <div class="challenge-card permanent">
       <div>
         <div class="challenge-name">Best Claim <span class="tag yellow">DAILY</span></div>
-        <div class="challenge-desc">Indipendente dalla qualità dell'onda. Il claim più assurdo, più ingiustificato, più aggressivo della giornata. Il contatto visivo con la line-up è premiato. Ogni tubo preso guadagna automaticamente 1 pt — la crew può essere più o meno clemente sul livello.</div>
+        <div class="challenge-desc">Independent of wave quality. The most absurd, unjustified, or aggressive claim of the day. Eye contact with the line-up is rewarded. Every tube automatically earns 1 claim point — crew decides how generous to be.</div>
       </div>
       <div class="challenge-points">1<small>pt</small></div>
     </div>
@@ -372,27 +402,43 @@
     <div class="challenge-card permanent">
       <div>
         <div class="challenge-name">Best Eject <span class="tag yellow">DAILY</span></div>
-        <div class="challenge-desc">Uscita dalla tavola con più stile o più caos. Bomba dal nose, salto carpiato, volo involontario. La crew giudica.</div>
+        <div class="challenge-desc">Exit from the board with the most style or most chaos. Nose bomb, somersault, involuntary flight. Crew judges.</div>
       </div>
       <div class="challenge-points">1<small>pt</small></div>
     </div>
 
   </div>
+
+  <div class="eot-box">
+    <h3>End-of-Trip Awards — Best in Class</h3>
+    <div class="concept-box" style="font-size:13px;margin-bottom:14px;background:#1a1a1a;">
+      On the last evening, the crew votes for the single best entry across the whole trip in each permanent category. Points awarded: <strong style="color:var(--yellow)">+5 / +3 / +2</strong>.
+    </div>
+    <div class="eot-grid">
+      <div class="eot-item">Best Tube</div>
+      <div class="eot-item">Best Wave</div>
+      <div class="eot-item">Best Commitment</div>
+      <div class="eot-item">Best Wipeout</div>
+      <div class="eot-item">Best Claim</div>
+      <div class="eot-item">Best Eject</div>
+      <div class="eot-item" style="border-color:var(--red);color:var(--red);">Best Reef Cuts</div>
+    </div>
+  </div>
 </section>
 
-<!-- SFIDE A CHIAMATA SURF -->
+<!-- ATTEMPT CHALLENGES — SURF -->
 <section>
   <div class="section-header">
     <span class="section-icon">⚡</span>
-    <h2>Sfide a Chiamata — Surf</h2>
+    <h2>Attempt Challenges — Surf</h2>
   </div>
-  <div class="scoring-note">Punteggio: <span>5</span> — <span>3</span> — <span>2</span> pt · Possono essere rubate se qualcuno outperforma</div>
+  <div class="scoring-note">Points: <span>5</span> — <span>3</span> — <span>2</span> · Anyone can attempt at any point. Top 3 ranked each evening.</div>
   <div class="challenge-grid">
 
     <div class="challenge-card">
       <div>
         <div class="challenge-name">La Bara</div>
-        <div class="challenge-desc">Prendi un'onda intera sdraiato sulla schiena. Posizione braccia a scelta del surfista.</div>
+        <div class="challenge-desc">Ride an entire wave lying flat on your back.</div>
       </div>
       <div class="challenge-points">5·3·2<small>pt</small></div>
     </div>
@@ -400,23 +446,23 @@
     <div class="challenge-card">
       <div>
         <div class="challenge-name">Knee Stance</div>
-        <div class="challenge-desc">Surf un'onda intera in ginocchio sulla tavola. Nessun alzarsi, nessun scorciatoia.</div>
+        <div class="challenge-desc">Surf an entire wave on your knees. No standing up, no shortcuts.</div>
       </div>
       <div class="challenge-points">5·3·2<small>pt</small></div>
     </div>
 
     <div class="challenge-card">
       <div>
-        <div class="challenge-name">Switch Stance Forzato</div>
-        <div class="challenge-desc">Un'onda intera al contrario. Regular surfa goofy, goofy surfa regular.</div>
+        <div class="challenge-name">Switch Stance</div>
+        <div class="challenge-desc">One full wave the wrong way around. Regular surfs goofy, goofy surfs regular.</div>
       </div>
       <div class="challenge-points">5·3·2<small>pt</small></div>
     </div>
 
     <div class="challenge-card">
       <div>
-        <div class="challenge-name">Il Drop-In</div>
-        <div class="challenge-desc">Droppa un compagno in modo palese e deliberato.</div>
+        <div class="challenge-name">The Drop-In</div>
+        <div class="challenge-desc">Deliberately and obviously drop in on a crewmate. Must be witnessed by the crew.</div>
       </div>
       <div class="challenge-points">5·3·2<small>pt</small></div>
     </div>
@@ -424,15 +470,7 @@
     <div class="challenge-card">
       <div>
         <div class="challenge-name">Tandem</div>
-        <div class="challenge-desc">Condividi un'onda con un compagno, entrambi in piedi sulla stessa tavola.</div>
-      </div>
-      <div class="challenge-points">5·3·2<small>pt</small></div>
-    </div>
-
-    <div class="challenge-card">
-      <div>
-        <div class="challenge-name">No Wax</div>
-        <div class="challenge-desc">Miglior onda surfata senza wax.</div>
+        <div class="challenge-desc">Share a wave with a crewmate — both standing on the same board.</div>
       </div>
       <div class="challenge-points">5·3·2<small>pt</small></div>
     </div>
@@ -440,31 +478,7 @@
     <div class="challenge-card">
       <div>
         <div class="challenge-name">No Fins</div>
-        <div class="challenge-desc">Surf con le fin rimosse. Nessun grip, nessun controllo direzionale.</div>
-      </div>
-      <div class="challenge-points">5·3·2<small>pt</small></div>
-    </div>
-
-    <div class="challenge-card">
-      <div>
-        <div class="challenge-name">Materassino Ride</div>
-        <div class="challenge-desc">Prendi un'onda sdraiato su un materassino invece di stare sulla tavola.</div>
-      </div>
-      <div class="challenge-points">5·3·2<small>pt</small></div>
-    </div>
-
-    <div class="challenge-card">
-      <div>
-        <div class="challenge-name">Fins First then Twist</div>
-        <div class="challenge-desc">Parti sull'onda con la coda della tavola davanti — fins first — poi esegui un giro a 180° durante il ride per metterti in posizione normale. Validato dalla crew dalla line-up.</div>
-      </div>
-      <div class="challenge-points">5·3·2<small>pt</small></div>
-    </div>
-
-    <div class="challenge-card">
-      <div>
-        <div class="challenge-name">Best Reef Cuts <span class="tag yellow">PREMIO FINALE</span></div>
-        <div class="challenge-desc">Le cicatrici più estetiche o numerose a fine trip. Votate dall'equipaggio maldiviano. Premio alla sofferenza con stile.</div>
+        <div class="challenge-desc">Surf with fins removed. No grip, no directional control.</div>
       </div>
       <div class="challenge-points">5·3·2<small>pt</small></div>
     </div>
@@ -472,78 +486,78 @@
   </div>
 </section>
 
-<!-- PENALITÀ -->
+<!-- PENALTIES -->
 <section>
   <div class="section-header">
     <span class="section-icon">🚨</span>
-    <h2>Penalità</h2>
+    <h2>Penalties</h2>
   </div>
   <div class="challenge-grid">
 
     <div class="challenge-card penalty">
       <div>
         <div class="challenge-name">Barrel Dodger</div>
-        <div class="challenge-desc">Se la crew testimonia che hai deliberatamente evitato un tubo aperto. Valutazione collettiva, non autocertificazione. Il dubbio va sempre contro l'imputato.</div>
+        <div class="challenge-desc">The crew witnesses you deliberately avoiding an open barrel. Collective judgment — the doubt always goes against the accused.</div>
       </div>
-      <div class="challenge-points red">-1<small>pt</small></div>
+      <div class="challenge-points red">−1<small>pt</small></div>
     </div>
 
     <div class="challenge-card penalty">
       <div>
         <div class="challenge-name">Trip on the Reef</div>
-        <div class="challenge-desc">Spiaggiamento sul reef, non caduta. Automatica, nessun appello.</div>
+        <div class="challenge-desc">Beaching or stepping on the reef. A wipeout that sends you into the reef doesn't count — this is specifically for avoidable contact.</div>
       </div>
-      <div class="challenge-points red">-1<small>pt</small></div>
+      <div class="challenge-points red">−1<small>pt</small></div>
     </div>
 
   </div>
 </section>
 
-<!-- SFIDE UMANE -->
+<!-- HUMAN & BOAT CHALLENGES -->
 <section>
   <div class="section-header">
     <span class="section-icon">🎭</span>
-    <h2>Sfide Umane e di Barca</h2>
+    <h2>Human &amp; Boat Challenges</h2>
   </div>
-  <div class="scoring-note">Sfide a chiamata: <span>5</span> — <span>3</span> — <span>2</span> pt · Daily vote: punteggio fisso</div>
+  <div class="scoring-note">Attempt challenges: <span>5</span> — <span>3</span> — <span>2</span> pt · Daily vote: fixed points</div>
   <div class="challenge-grid">
 
     <div class="challenge-card human">
       <div>
-        <div class="challenge-name">Bootie Juice <span class="tag yellow">APERTA A TUTTI</span></div>
-        <div class="challenge-desc">Bere una bibita o una birra versata in una scarpetta da surf usata. Umida. L'odore è parte del rito. Non si fa la faccia.</div>
+        <div class="challenge-name">Bootie Juice <span class="tag yellow">OPEN</span></div>
+        <div class="challenge-desc">Drink a beer or soft drink poured into a used surf bootie. Anyone can do this at any time.</div>
       </div>
       <div class="challenge-points">2<small>pt</small></div>
     </div>
 
     <div class="challenge-card human">
       <div>
-        <div class="challenge-name">Intrattenimento Coatto <span class="tag blue">A CHIAMATA</span></div>
-        <div class="challenge-desc">10 minuti di canto e ballo per la crew maldiviana. Giudicato in base agli applausi, alla confusione o alla pietà generata. Niente playback, niente vergogna.</div>
+        <div class="challenge-name">Forced Entertainment <span class="tag blue">ATTEMPT</span></div>
+        <div class="challenge-desc">10 minutes of singing and dancing for the Maldivian crew. Judged on applause generated, confusion caused, or pity received. No playback. No shame.</div>
       </div>
       <div class="challenge-points">5·3·2<small>pt</small></div>
     </div>
 
     <div class="challenge-card human">
       <div>
-        <div class="challenge-name">Worst Haircut / Style <span class="tag blue">A CHIAMATA</span></div>
-        <div class="challenge-desc">Tagliarsi i capelli o assemblare il look più imbarazzante del trip con i mezzi disponibili a bordo. Deve essere indossato per almeno un giorno intero.</div>
+        <div class="challenge-name">Worst Haircut / Style <span class="tag blue">ATTEMPT</span></div>
+        <div class="challenge-desc">Cut your hair or assemble the most embarrassing look of the trip. Points for ugliness and commitment — the longer the look is maintained, the better.</div>
       </div>
       <div class="challenge-points">5·3·2<small>pt</small></div>
     </div>
 
     <div class="challenge-card human">
       <div>
-        <div class="challenge-name">Best Fish <span class="tag blue">A CHIAMATA</span></div>
-        <div class="challenge-desc">Chi porta il pesce più grosso o epico durante il trip.</div>
+        <div class="challenge-name">Best Fish <span class="tag blue">ATTEMPT</span></div>
+        <div class="challenge-desc">Whoever catches the biggest or most impressive fish during the trip.</div>
       </div>
       <div class="challenge-points">5·3·2<small>pt</small></div>
     </div>
 
     <div class="challenge-card human">
       <div>
-        <div class="challenge-name">Most Painful Dive from the Boat <span class="tag blue">A CHIAMATA</span></div>
-        <div class="challenge-desc">Tuffo dal punto più alto della barca. Giudicato su impatto visivo, suono all'atterraggio e reazione del tuffatore.</div>
+        <div class="challenge-name">Most Painful Boat Dive <span class="tag blue">ATTEMPT</span></div>
+        <div class="challenge-desc">Dive from the highest point on the boat. Judged on visual impact, sound on entry, and the diver's own reaction.</div>
       </div>
       <div class="challenge-points">5·3·2<small>pt</small></div>
     </div>
@@ -551,7 +565,7 @@
     <div class="challenge-card human">
       <div>
         <div class="challenge-name">MVP Entertainment <span class="tag yellow">DAILY VOTE</span></div>
-        <div class="challenge-desc">Chi ha reso la giornata più epica. Non per i punti — per l'energy portata. Voto a mano alzata ogni sera dopo cena.</div>
+        <div class="challenge-desc">Who made the day most memorable. Not about points — about energy brought. Show of hands every evening after dinner.</div>
       </div>
       <div class="challenge-points">2<small>pt</small></div>
     </div>
@@ -559,22 +573,22 @@
   </div>
 </section>
 
-<!-- SCHIAVO DI BORDO -->
+<!-- SHIP'S SLAVE -->
 <section>
   <div class="section-header">
     <span class="section-icon">🧹</span>
-    <h2>Schiavo di Bordo</h2>
+    <h2>Ship's Slave</h2>
   </div>
-  <div class="schiavo-box">
-    <h3>Assegnato automaticamente all'ultimo in classifica ogni sera</h3>
+  <div class="slave-box">
+    <h3>Automatically assigned to last place each evening</h3>
     <ul>
-      <li>Porta caffè e colazione a tutti prima della sessione mattutina</li>
-      <li>Spennella la crema solare sulla schiena degli altri</li>
-      <li>Sciacqua le lycre dopo ogni sessione</li>
-      <li>Porta le tavole sui tender</li>
-      <li>Non si lamenta. Sta zitto.</li>
-      <li>Non può delegare le mansioni</li>
-      <li style="color:var(--yellow)"><strong>Redenzione:</strong> Lo Schiavo può sfidare chiunque. Lo sfidato sceglie la sfida. Se lo Schiavo vince, si scambiano i ruoli per 24h. Se perde: -3 pt allo Schiavo, +3 pt all'avversario.</li>
+      <li>Deliver coffee and breakfast to everyone before the morning session</li>
+      <li>Apply sunscreen to crewmates' backs</li>
+      <li>Rinse lycras after every session</li>
+      <li>Carry boards to the tenders</li>
+      <li>No complaining. Silence is part of the role.</li>
+      <li>No delegating.</li>
+      <li style="color:var(--yellow)"><strong>Redemption:</strong> The Slave can challenge anyone on board. The person challenged picks the challenge. If the Slave wins, roles swap for 24 hours. If the Slave loses: −3 pt for the Slave, +3 pt for the other.</li>
     </ul>
   </div>
 </section>
@@ -586,11 +600,11 @@
     <h2>Leaderboard</h2>
   </div>
   <div class="concept-box" style="font-size:13px;margin-bottom:16px">
-    Aggiornato ogni sera dopo cena. Il punteggio viene letto ad alta voce con commento obbligatorio su chi ha fatto peggio nella giornata.
+    Updated every evening after dinner. Scores read aloud with mandatory commentary on whoever had the worst day.
   </div>
   <table class="leaderboard">
     <thead>
-      <tr><th>POS</th><th>Nome</th><th>Punti</th><th>Status</th></tr>
+      <tr><th>Pos</th><th>Name</th><th>Points</th><th>Status</th></tr>
     </thead>
     <tbody>
       <tr class="leader">
@@ -603,49 +617,49 @@
       <tr><td><span class="pos-badge">5</span></td><td>—</td><td>—</td><td>—</td></tr>
       <tr class="last">
         <td><span class="pos-badge" style="color:var(--red)">LAST</span></td><td>—</td><td>—</td>
-        <td><span class="status-badge schiavo">🧹 Schiavo</span></td>
+        <td><span class="status-badge slave">🧹 Slave</span></td>
       </tr>
     </tbody>
   </table>
 </section>
 
-<!-- PREMI -->
+<!-- FINAL PRIZES -->
 <section>
   <div class="section-header">
     <span class="section-icon">🏆</span>
-    <h2>Premi Finali</h2>
+    <h2>Final Prizes</h2>
   </div>
   <div class="prize-grid">
     <div class="prize-card">
       <div class="prize-icon">🏆</div>
-      <h3>Il Trofeo di Merda</h3>
-      <p>Costruito a mano durante il trip con materiali di barca — nastro adesivo, cannucce, bottiglia di rum vuota, qualsiasi cosa disponibile. Consegnato con cerimonia seria.</p>
+      <h3>The Trophy of Shit</h3>
+      <p>Built by hand during the trip using whatever boat materials are available — tape, straws, empty rum bottle, anything. Presented with full ceremony.</p>
     </div>
     <div class="prize-card">
-      <div class="prize-icon">🏄</div>
-      <h3>Buono Surf Shop</h3>
-      <p>10€ a testa a inizio trip. Premio in palio per il vincitore finale. Da decidere insieme prima della cerimonia.</p>
+      <div class="prize-icon">💰</div>
+      <h3>Crew Fund</h3>
+      <p>10 euros per person at the start of the trip. Used as final prize — surf shop voucher or equivalent. TBD by crew before the ceremony.</p>
     </div>
     <div class="prize-card">
       <div class="prize-icon">⭐</div>
-      <h3>MVP del Trip</h3>
-      <p>Non per i punti — per chi ha reso il trip più epico. Voto finale della crew all'ultima cena.</p>
+      <h3>Trip MVP</h3>
+      <p>Not for points — for whoever made the trip most memorable. Final crew vote at the last dinner.</p>
     </div>
   </div>
 </section>
 
-<!-- REGOLE -->
+<!-- GENERAL RULES -->
 <section>
   <div class="section-header">
     <span class="section-icon">📜</span>
-    <h2>Regole Generali</h2>
+    <h2>General Rules</h2>
   </div>
   <ul class="rules-list">
-    <li><span class="rule-num">01</span>Nessuna sfida è obbligatoria — ma rifiutarla troppe volte ti costa reputazione.</li>
-    <li><span class="rule-num">02</span>Le dispute si risolvono con votazione maggioritaria. Nessun appello.</li>
-    <li><span class="rule-num">03</span>Lo speedo giallo si indossa in acqua. Niente eccezioni per le foto. Anzi, soprattutto per le foto.</li>
-    <li><span class="rule-num">04</span>Lo Schiavo di Bordo non può delegare le mansioni. Il silenzio è parte del ruolo.</li>
-    <li><span class="rule-num">05</span>I voti surf sono ponderati per livello. Il criterio è il coraggio relativo, non il talento assoluto.</li>
+    <li><span class="rule-num">01</span>No challenge is mandatory — but refusing too many will cost you reputation.</li>
+    <li><span class="rule-num">02</span>Disputes are resolved by majority vote. No appeals.</li>
+    <li><span class="rule-num">03</span>The yellow speedo is worn in the water. No exceptions for photos. Especially for photos.</li>
+    <li><span class="rule-num">04</span>The Ship's Slave cannot delegate duties. Silence is part of the role.</li>
+    <li><span class="rule-num">05</span>Surf votes are weighted by level. The criterion is relative courage, not absolute talent.</li>
   </ul>
 </section>
 
