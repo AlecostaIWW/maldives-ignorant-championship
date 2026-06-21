@@ -221,7 +221,7 @@
   }
 
   .prize-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  @media (max-width: 560px) { .prize-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 600px) { .prize-grid { grid-template-columns: 1fr; } }
   .prize-card { background: #111; border: 1px solid var(--border); padding: 20px; }
   .prize-card .prize-icon { font-size: 28px; margin-bottom: 8px; }
   .prize-card h3 {
@@ -394,7 +394,15 @@
     <div class="challenge-card permanent">
       <div>
         <div class="challenge-name">Best Claim <span class="tag yellow">DAILY</span></div>
-        <div class="challenge-desc">Independent of wave quality. The most absurd, unjustified, or aggressive claim of the day. Eye contact with the line-up is rewarded. Every tube automatically earns 1 claim point — crew decides how generous to be.</div>
+        <div class="challenge-desc">Independent of wave quality. The most absurd, unjustified, or aggressive claim of the day. Eye contact with the line-up is rewarded.</div>
+      </div>
+      <div class="challenge-points">1<small>pt</small></div>
+    </div>
+
+    <div class="challenge-card permanent">
+      <div>
+        <div class="challenge-name">Tube Point <span class="tag yellow">DAILY · EVERYONE</span></div>
+        <div class="challenge-desc">Any crew member who gets a tube — or something close to it — earns 1 point. No vote needed, no ranking. If you were in the barrel, you get the point. Multiple people can score this in the same session.</div>
       </div>
       <div class="challenge-points">1<small>pt</small></div>
     </div>
@@ -461,14 +469,6 @@
 
     <div class="challenge-card">
       <div>
-        <div class="challenge-name">The Drop-In</div>
-        <div class="challenge-desc">Deliberately and obviously drop in on a crewmate. Must be witnessed by the crew.</div>
-      </div>
-      <div class="challenge-points">5·3·2<small>pt</small></div>
-    </div>
-
-    <div class="challenge-card">
-      <div>
         <div class="challenge-name">Tandem</div>
         <div class="challenge-desc">Share a wave with a crewmate — both standing on the same board.</div>
       </div>
@@ -493,6 +493,14 @@
     <h2>Penalties</h2>
   </div>
   <div class="challenge-grid">
+
+    <div class="challenge-card penalty">
+      <div>
+        <div class="challenge-name">Drop-In</div>
+        <div class="challenge-desc">Dropping in on a crewmate — deliberately cutting off someone who already has the wave. Witnessed by at least one person in the line-up. No appeals.</div>
+      </div>
+      <div class="challenge-points red">−1<small>pt</small></div>
+    </div>
 
     <div class="challenge-card penalty">
       <div>
@@ -630,20 +638,41 @@
     <h2>Final Prizes</h2>
   </div>
   <div class="prize-grid">
-    <div class="prize-card">
-      <div class="prize-icon">🏆</div>
-      <h3>The Trophy of Shit</h3>
-      <p>Built by hand during the trip using whatever boat materials are available — tape, straws, empty rum bottle, anything. Presented with full ceremony.</p>
+    <div class="prize-card" style="border-color:var(--yellow);position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;width:100%;height:3px;background:var(--yellow);"></div>
+      <div class="prize-icon">🥇</div>
+      <h3>1st Place</h3>
+      <p>
+        · 10% discount at <strong>Surf Tribe</strong><br>
+        · Dinner at <strong>Terrazza Uluwatu</strong><br>
+        · Surf voucher — <strong>60%</strong> of the crew fund<br>
+        · <strong>Lycra</strong>
+      </p>
     </div>
     <div class="prize-card">
-      <div class="prize-icon">💰</div>
-      <h3>Crew Fund</h3>
-      <p>10 euros per person at the start of the trip. Used as final prize — surf shop voucher or equivalent. TBD by crew before the ceremony.</p>
+      <div class="prize-icon">🥈</div>
+      <h3>2nd Place</h3>
+      <p>
+        · <strong>Nicawana Hat</strong><br>
+        · Surf voucher — <strong>25%</strong> of the crew fund
+      </p>
     </div>
     <div class="prize-card">
-      <div class="prize-icon">⭐</div>
-      <h3>Trip MVP</h3>
-      <p>Not for points — for whoever made the trip most memorable. Final crew vote at the last dinner.</p>
+      <div class="prize-icon">🥉</div>
+      <h3>3rd Place</h3>
+      <p>
+        · <strong>Nicawana Hat</strong><br>
+        · Surf voucher — <strong>15%</strong> of the crew fund
+      </p>
+    </div>
+    <div class="prize-card" style="border-color:var(--red);position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;width:100%;height:3px;background:var(--red);"></div>
+      <div class="prize-icon">💩</div>
+      <h3>Last Place</h3>
+      <p>
+        · The <strong>Trophy of Shit</strong> — built on board from whatever is available<br>
+        · The yellow <strong>speedo goes home with you</strong>. Forever.
+      </p>
     </div>
   </div>
 </section>
